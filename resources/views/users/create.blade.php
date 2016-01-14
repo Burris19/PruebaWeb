@@ -11,7 +11,7 @@
             </div>
             <div class="form-group col-sm-6">
                 {!! Form::label('phone', 'Telefono' ) !!}
-                {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Ingrese su telefono', 'required']) !!}
+                {!! Form::number('phone', null, ['class' => 'form-control', 'placeholder' => 'Ingrese su telefono', 'required']) !!}
             </div>
 
             <div class="form-group col-sm-6">
@@ -23,14 +23,14 @@
                 {!! Form::date('birthday', \Carbon\Carbon::now(), ['class' => 'form-control', 'required'] ) !!}
             </div>
 
-            <div class="form-group" style="text-align: right">
-                <div class="col-sm-offset-2 col-sm-10">
+            <div class="form-group" style="text-align: right" >
+                <div class="col-sm-offset-2 col-sm-10" id="divButton">
                     <button type="submit" class="btn btn-success" id="saveUSer">Guardar</button>
                     <button type="submit" class="btn btn-danger" id="cancelSave">Cancelar</button>
                 </div>
             </div>
         {!! Form::close() !!}
     </div>
-
 </div>
+
 

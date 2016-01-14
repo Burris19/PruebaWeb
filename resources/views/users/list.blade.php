@@ -2,15 +2,19 @@
 
 @section('content')
 
-
-
     @include('users.create')
 
     <div class="container">
-        <button class="btn btn-success" id="showPanel">Agregar Usuario</button>
+        <div class="row" id="showPanel">
+            <div class="col-lg-7 text-left">
+                <button class="btn btn-success">Agregar Usuario</button>
+            </div>
+        </div>
+
         <hr>
+
         <div class="row">
-            <table class="table table-striped" id="bodyTable">
+            <table class="table table-striped col-sm-12" id="bodyTable">
                 <thead>
                     <th>Nombre</th>
                     <th>Telefono</th>
@@ -33,8 +37,8 @@
                         </tr>
                     @endforeach
                 </tbody>
-
             </table>
         </div>
+
     </div>
 @endsection()
