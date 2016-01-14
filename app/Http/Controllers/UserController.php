@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\ValidationServiceProvider;
+use PhpSpec\Exception\Exception;
 
 class UserController extends Controller
 {
@@ -39,7 +41,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return "store";
+        try{
+
+            $user = User::create($request->all());
+
+            $success = true;
+            $message = "Usuario registrado exitosamente";
+
+            return compact('success', 'message', 'user');
+
+        }catch (Exception $e)
+        {
+            $success = false;
+            $message = "Error al registrar el usuario";
+
+            return compact('success', 'message');
+
+        }
+
+
     }
 
     /**
