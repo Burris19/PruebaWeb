@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container" id="panelCreate" style="display: none">
     <div class="row col-sm-12">
-        {!! Form::open(['url' => 'user.store', 'method' => 'POST', ]) !!}
+        <div class="panel-heading panel-primary">Crear Usuario</div>
+        {!! Form::open(['url' => 'user', 'method' => 'POST', 'id' => 'formCreate' ]) !!}
+
+            {{--{!! csrf_field() !!}--}}
 
             <div class="form-group col-sm-6">
                 {!! Form::label('name', 'Nombre' ) !!}
@@ -28,5 +31,6 @@
             </div>
         {!! Form::close() !!}
     </div>
+
 </div>
 
