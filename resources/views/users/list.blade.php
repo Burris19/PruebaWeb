@@ -1,6 +1,9 @@
 @extends('users.layout')
 
 @section('content')
+
+    @include('users.create')
+
     <div class="container">
         <div class="row">
             <table class="table table-condensed">
