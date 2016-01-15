@@ -1,5 +1,12 @@
 <?php
 
+$url = parse_url(env("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
 return [
 
     /*
@@ -44,6 +51,8 @@ return [
     |
     */
 
+
+
     'connections' => [
 
         'sqlite' => [
@@ -54,10 +63,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'host'      => env($server, 'localhost'),
+            'database'  => env($db, 'forge'),
+            'username'  => env($username, 'forge'),
+            'password'  => env($password, ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
