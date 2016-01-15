@@ -63,10 +63,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env($server, 'localhost'),
-            'database'  => env($db, 'forge'),
-            'username'  => env($username, 'forge'),
-            'password'  => env($password, ''),
+            'host'      => $server,
+            'database'  => $db,
+            'username'  => $username,
+            'password'  => $password,
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
